@@ -10,16 +10,16 @@ namespace DistantLands
         public float moveRange;
         public float moveSpeed;
         public Vector2 positionChangeSpeed;
+        public Transform target;
         float _time;
         Vector3 _originalPos;
         Vector3 _newPos;
-        Transform target;
-
 
         void Awake()
         {
             _originalPos = transform.position;
-            target = transform.GetChild(0);
+            if(target == null)
+                target = transform.GetChild(0);
         }
 
         // Update is called once per frame
